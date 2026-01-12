@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:smart_face_capture/smart_face_capture.dart';
 
@@ -160,8 +161,8 @@ class ResultsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Image.network(
-                  capturedFiles[index].path,
+                Image.file(
+                  File(capturedFiles[index].path),
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
                     return Container(
