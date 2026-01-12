@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 
 /// Utility functions for the smart face capture package.
@@ -16,10 +17,7 @@ double calculateAspectRatio(double width, double height) {
 
 /// Validates if a file path is valid.
 bool isValidFilePath(String? path) {
-  if (path == null || path.isEmpty) {
-    return false;
-  }
-  return path.isNotEmpty;
+  return path != null && path.isNotEmpty;
 }
 
 /// Formats file size in human-readable format.
@@ -35,10 +33,10 @@ String formatFileSize(int bytes) {
 
 /// Converts degrees to radians.
 double degreesToRadians(double degrees) {
-  return degrees * (3.14159265359 / 180.0);
+  return degrees * (math.pi / 180.0);
 }
 
 /// Converts radians to degrees.
 double radiansToDegrees(double radians) {
-  return radians * (180.0 / 3.14159265359);
+  return radians * (180.0 / math.pi);
 }
